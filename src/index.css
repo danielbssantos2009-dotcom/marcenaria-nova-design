@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Color Palette - Light & Warm */
+  --bg-light: #fdfbf7;
+  --text-dark: #2c1e14;
+  --text-muted: #6b5a4a;
+  --oak: #8b5e34;
+  --oak-light: #a67c52;
+  --white: #ffffff;
+  --accent: #e6d5bc;
+  
+  /* Typography - UPDATED TO SORA */
+  --font-serif: 'Sora', sans-serif;
+  --font-sans: 'Sora', sans-serif;
+  
+  /* Spacing */
+  --container-max: 1440px;
+  --section-padding: 120px;
+  
+  /* Animations */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  background: var(--bg-light);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section-tag {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--oak);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 2rem;
+}
+
+.accent-text {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--oak);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Base Utility Classes */
+.btn-primary {
+  padding: 1.2rem 2.5rem;
+  background-color: var(--text-dark);
+  color: var(--white);
+  border-radius: 100px;
+  font-weight: 500;
+  display: inline-block;
+  transition: all 0.3s var(--ease);
+}
+
+.btn-primary:hover {
+  background-color: var(--oak);
+  transform: translateY(-5px);
+}

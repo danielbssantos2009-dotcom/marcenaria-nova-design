@@ -1,0 +1,267 @@
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: var(--bg-light);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Blueprint Grid Overlay */
+.blueprint-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--oak) 0.5px, transparent 0.5px);
+  background-size: 30px 30px;
+  opacity: 0.05;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(253, 251, 247, 0.99) 5%,
+    rgba(253, 251, 247, 0.85) 35%,
+    rgba(253, 251, 247, 0.4) 100%
+  );
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(1.2);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text-wrapper {
+  max-width: 850px;
+}
+
+/* Masked Wood Text - With subtle movement */
+.masked-text {
+  background: #2c1e14 url('/images/wood-mask.png') center/cover;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #2c1e14;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  filter: drop-shadow(0 2px 4px rgba(44, 30, 20, 0.1));
+  animation: woodFlow 20s linear infinite alternate;
+}
+
+@keyframes woodFlow {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
+.hero-title {
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title .line {
+  display: block;
+}
+
+.hero-title .oak-text {
+  background: linear-gradient(
+    90deg, 
+    var(--oak) 0%, 
+    #d4a373 50%, 
+    var(--oak) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-weight: 400;
+  animation: gradientFlow 6s linear infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin-bottom: 4rem;
+  font-weight: 400;
+}
+
+/* Premium Button with Shimmer */
+.btn-premium {
+  position: relative;
+  padding: 1.2rem 3rem;
+  background-color: var(--text-dark);
+  color: var(--white);
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: inline-block;
+  overflow: hidden;
+  transition: all 0.4s var(--ease);
+  box-shadow: 0 10px 30px rgba(44, 30, 20, 0.2);
+}
+
+.btn-premium::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: 0.8s;
+  pointer-events: none;
+}
+
+.btn-premium:hover::after {
+  left: 100%;
+}
+
+.btn-premium:hover {
+  background-color: var(--oak);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(139, 94, 52, 0.3);
+}
+
+/* Floating Badges */
+.hero-badges-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  perspective: 1000px;
+}
+
+.floating-badge {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  padding: 20px 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.4);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  min-width: 180px;
+  position: relative;
+}
+
+.badge-val {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.badge-sub {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Positions */
+.b-0 { transform: translateX(-40px); }
+.b-1 { transform: translateX(20px); }
+.b-2 { transform: translateX(-10px); }
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.scroll-indicator span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.mouse {
+  width: 20px;
+  height: 35px;
+  border: 1px solid var(--oak);
+  border-radius: 20px;
+  position: relative;
+}
+
+.mouse::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 6px;
+  background: var(--oak);
+  animation: scrollMouse 2s infinite;
+}
+
+@keyframes scrollMouse {
+  0% { transform: translate(-50%, 0); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translate(-50%, 15px); opacity: 0; }
+}
+
+@media (max-width: 1100px) {
+    .hero-badges-container {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+}

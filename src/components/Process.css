@@ -1,0 +1,223 @@
+.process-v4 {
+  padding: 12rem 0 8rem 0;
+  background: var(--bg-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.process-header-v4 {
+  text-align: center;
+  margin-bottom: 10rem;
+}
+
+.process-title-v4 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--text-dark);
+  margin-top: 1rem;
+}
+
+.process-list-v4 {
+  display: flex;
+  flex-direction: column;
+  gap: 15rem; /* Large gaps for editorial rhythm */
+}
+
+/* ZIG-ZAG LOGIC (DESKTOP) */
+.process-phase-row {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+}
+
+.process-phase-row.is-reversed {
+  flex-direction: row-reverse;
+}
+
+.phase-visual-column {
+    flex: 0 0 40%;
+    /* No visual elements on desktop as per order */
+}
+
+.phase-text-column {
+    flex: 0 0 50%;
+    opacity: 1;
+}
+
+.process-phase-row.is-reversed .phase-text-column {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.phase-num-v4 {
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: var(--oak);
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.phase-title-v4 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.phase-desc-v4 {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 500px;
+    font-weight: 300;
+}
+
+.milestones-v4 {
+    list-style: none;
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.milestones-v4 li {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-dark);
+}
+
+.check-v4 {
+    color: var(--oak);
+}
+
+/* FOOTER TRANSITION */
+.process-footer-transition {
+    margin-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.transition-line {
+    width: 1px;
+    height: 150px;
+    background: linear-gradient(to bottom, var(--oak), transparent);
+}
+
+.transition-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--oak);
+    border-radius: 50%;
+}
+
+/* TRENA EDGE BAR (DESKTOP) */
+.trena-desktop-edge {
+    position: absolute;
+    left: 20px;
+    top: 15%;
+    bottom: 15%;
+    width: 4px;
+    z-index: 100;
+}
+
+.trena-track-v4 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.03);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.trena-bar-v4 {
+    width: 100%;
+    height: 0;
+    background: var(--oak);
+    border-radius: 10px;
+}
+
+.trena-markings-v4 {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, #000 1px, transparent 1px);
+    background-size: 100% 15px;
+    opacity: 0.1;
+}
+
+/* MOBILE BLINDAGEM: KEPT RELEVANT AS PER PREVIOUS ORDER */
+@media (max-width: 992px) {
+    .trena-desktop-edge {
+        display: none !important;
+    }
+    
+    .process-v4 {
+        padding: 6rem 5% 4rem 5%;
+    }
+
+    .process-header-v4 {
+        margin-bottom: 4rem;
+        text-align: left;
+    }
+
+    .process-list-v4 {
+        gap: 6rem;
+    }
+
+    .process-phase-row, 
+    .process-phase-row.is-reversed {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 2rem;
+    }
+
+    .phase-visual-column {
+        flex: 0 0 auto;
+        width: 100%;
+        display: block;
+    }
+
+    .mobile-only-img {
+        display: block !important;
+        width: 100%;
+        aspect-ratio: 16/10;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 10px solid white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .phase-text-column {
+        flex: 0 0 auto;
+        width: 100%;
+        align-items: flex-start !important;
+    }
+
+    .phase-title-v4 {
+        font-size: 2.2rem;
+    }
+
+    .phase-desc-v4 {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+
+    .milestones-v4 {
+        margin-top: 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .process-footer-transition {
+        display: none;
+    }
+}

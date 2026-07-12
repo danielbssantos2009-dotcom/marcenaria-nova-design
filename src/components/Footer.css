@@ -1,0 +1,189 @@
+.footer {
+  background: var(--bg-light); /* REVERTED: Light theme */
+  padding: 12rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-dark);
+}
+
+/* Monumental Watermark - Adapted for Light Theme */
+.footer-watermark {
+  position: absolute;
+  bottom: -5%;
+  right: -5%;
+  font-size: clamp(15rem, 30vw, 38rem);
+  font-weight: 950;
+  color: rgba(44, 30, 20, 0.03); /* Subtle dark watermark */
+  pointer-events: none;
+  line-height: 0.8;
+  letter-spacing: -2rem;
+  z-index: 0;
+}
+
+.footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA Card Redesign - Light Glass version */
+.footer-cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  border: 1px solid rgba(139, 94, 52, 0.15);
+  padding: 5rem;
+  border-radius: 40px;
+  margin-bottom: 12rem;
+  gap: 4rem;
+  box-shadow: 0 30px 60px rgba(44, 30, 20, 0.05);
+}
+
+.cta-left {
+  flex: 1;
+}
+
+.cta-right {
+  flex: 1.2;
+}
+
+.footer-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.footer-p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+/* Main Grid */
+.footer-main-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+  padding-bottom: 8rem;
+}
+
+.footer-brand {
+  max-width: 400px;
+}
+
+.footer-logo .logo-text {
+  color: var(--text-dark);
+  font-size: 2.2rem;
+  letter-spacing: 0.4rem;
+}
+
+.footer-logo .logo-subtext {
+  color: var(--oak);
+  letter-spacing: 0.8rem;
+}
+
+.brand-tagline {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 1.5rem;
+  opacity: 0.7;
+}
+
+/* Info Links Section */
+.footer-info-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  flex: 2;
+}
+
+.footer-col h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--oak);
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+.footer-col a, .footer-col p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  transition: all 0.3s ease;
+  opacity: 0.85;
+}
+
+.footer-col a svg {
+  color: var(--oak);
+  font-size: 1.1rem;
+}
+
+.footer-col a:hover {
+  color: var(--oak);
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Bottom Section */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(139, 94, 52, 0.1);
+  margin-bottom: 3rem;
+}
+
+.bottom-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+.legal-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.legal-links a {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+  color: var(--oak);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1200px) {
+  .footer-cta-card {
+    flex-direction: column;
+    padding: 3rem;
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer-main-grid {
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-info-links {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .footer-watermark {
+    font-size: 12rem;
+  }
+}
