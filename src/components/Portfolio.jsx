@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { FaTimes, FaAngleRight } from 'react-icons/fa'
+import { trackWhatsAppClick } from '../utils/tracking'
 import './Portfolio.css'
 
 const projects = [
@@ -102,7 +103,7 @@ const Portfolio = () => {
                         <p className="modal-desc">{selectedProject.story}</p>
                         
                         <div className="modal-footer-cta">
-                            <a href={`https://wa.me/5511964449067?text=Gostei do projeto ${selectedProject.title}`} target="_blank" rel="noopener noreferrer" className="btn-modal-solicitar">
+                            <a href={`https://wa.me/5511964449067?text=Gostei do projeto ${selectedProject.title}`} target="_blank" rel="noopener noreferrer" className="btn-modal-solicitar" onClick={trackWhatsAppClick}>
                                 Solicitar Orçamento similar <FaAngleRight />
                             </a>
                         </div>

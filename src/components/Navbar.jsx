@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import gsap from 'gsap'
+import { trackWhatsAppClick } from '../utils/tracking'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -69,7 +70,7 @@ const Navbar = () => {
           </div>
 
           <div className="nav-cta">
-            <a href="https://wa.me/5511964449067" target="_blank" rel="noopener noreferrer" className="nav-btn">
+            <a href="https://wa.me/5511964449067" target="_blank" rel="noopener noreferrer" className="nav-btn" onClick={trackWhatsAppClick}>
               Solicitar
             </a>
           </div>

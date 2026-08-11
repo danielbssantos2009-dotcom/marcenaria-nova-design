@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaInstagram, FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import { trackWhatsAppClick } from '../utils/tracking'
 import './Footer.css'
 
 const Footer = () => {
@@ -15,7 +16,7 @@ const Footer = () => {
           </div>
           <div className="cta-right">
             <p className="footer-p">Cada projeto começa com uma conversa. Agende sua consultoria exclusiva agora mesmo e transforme sua visão em realidade com maestria.</p>
-            <a href="https://wa.me/5511964449067" target="_blank" rel="noopener noreferrer" className="btn-premium">
+            <a href="https://wa.me/5511964449067" target="_blank" rel="noopener noreferrer" className="btn-premium" onClick={trackWhatsAppClick}>
               Falar pelo WhatsApp
             </a>
           </div>
@@ -34,13 +35,13 @@ const Footer = () => {
             <div className="footer-col">
               <h4>Contato</h4>
               <a href="mailto:moveisnovadesigne@gmail.com"><FaEnvelope /> moveisnovadesigne@gmail.com</a>
-              <a href="https://wa.me/5511964449067"><FaWhatsapp /> (11) 96444-9067</a>
+              <a href="https://wa.me/5511964449067" onClick={trackWhatsAppClick}><FaWhatsapp /> (11) 96444-9067</a>
             </div>
 
             <div className="footer-col">
               <h4>Social</h4>
               <a href="https://instagram.com/marcenaria.novadesign" target="_blank" rel="noopener noreferrer"><FaInstagram /> Instagram</a>
-              <a href="#"><FaWhatsapp /> WhatsApp</a>
+              <a href="https://wa.me/5511964449067" target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick}><FaWhatsapp /> WhatsApp</a>
             </div>
 
             <div className="footer-col">
