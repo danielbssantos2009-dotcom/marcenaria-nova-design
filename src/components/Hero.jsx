@@ -62,7 +62,7 @@ const Hero = () => {
       <div className="blueprint-overlay"></div>
       
       <div className="hero-bg" ref={imageRef}>
-        <img src="/images/hero.png" alt="Luxury Interior" />
+        <img src="/images/hero.png" alt="Marcenaria Nova Design - Móveis planejados de alto padrão em São Paulo SP" />
       </div>
       
       <div className="container hero-content">
